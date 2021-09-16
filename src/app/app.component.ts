@@ -6,13 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public title = 'App demo de Hector';
-
-  public get cantidad(): number {
-    return 2;
-  }
-
-  public get precio(): number {
-    return 9;
-  }
+  title = 'App demo de Hector';
 }
