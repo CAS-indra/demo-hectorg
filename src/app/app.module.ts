@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { TituloComponent } from './titulo/titulo.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, TituloComponent],
+  declarations: [AppComponent, TituloComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, LayoutModule],
   providers: [],
   bootstrap: [AppComponent],

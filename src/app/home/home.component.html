@@ -1,0 +1,25 @@
+<app-titulo></app-titulo>
+
+<h3 [style.color]="color">Tengo {{ proyectos.length | number:'1.1' }} proyectos</h3>
+
+<progress *ngIf="value > 0"
+          [value]="value"
+          max="100"></progress>
+
+<br>
+
+<button (click)="incrementar()">Incrementar</button>
+<button (click)="reducir()">Reducir</button>
+
+<br><br>
+
+<div *ngFor="let proyecto of proyectos">
+  <!--<span [class]= proyecto.status></span>
+     <span class="{{ proyecto.status}}">  -->
+   <span [ngClass]="{ active: proyecto.status ==1, pending: proyecto.status==0}">
+
+    😂 {{ proyecto.name }} - {{ proyecto.status }}
+  </span>
+</div>
+
+<p>El multiplo 3 de {{ value }} es {{ multiplo(3) }}</p>
