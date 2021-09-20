@@ -18,7 +18,7 @@
      <span class="{{ proyecto.status}}">  -->
    <span [ngClass]="{ active: proyecto.status ==1, pending: proyecto.status==0}">
 
-    😂 {{ proyecto.name }} - {{ proyecto.status }}
+    😂 <a routerLink="./project-editor/{{proyecto.id}}">{{ proyecto.name }}</a>
   </span>
 </div>
 

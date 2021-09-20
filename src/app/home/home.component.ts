@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProyectosService } from '../data/proyectos.service';
 
 @Component({
   selector: 'app-home',
@@ -6,18 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  constructor() {}
+  constructor(private projectService: ProyectosService) {}
 
-  public proyectos = [
-    {
-      name: 'Aprender Angular',
-      status: 1,
-    },
-    {
-      name: 'Tener un buen trabajo',
-      status: 0,
-    },
-  ];
+  public proyectos = this.projectService.getProyectos();
   public color = 'blueviolet';
   public value = 50;
 
