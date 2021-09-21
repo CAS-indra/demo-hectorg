@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ProyectosService } from '../data/proyectos.service';
 
 @Component({
@@ -10,17 +11,23 @@ import { ProyectosService } from '../data/proyectos.service';
 export class ProjectEditorComponent implements OnInit {
   public projectId = '';
   public project = { name: '', budget: 0 };
+  public project$: Observable<any>;
 
   constructor(private route: ActivatedRoute, private proyectosService: ProyectosService) {
     // const projectId = route.snapshot.params['id'];
     // this.projectId = projectId;
     // console.log('project Id ---> ', projectId);
+    this.projectId = this.route.snapshot.params['id'];
+    this.project$ = this.proyectosService.getProjectById(this.projectId);
   }
 
   ngOnInit(): void {
-    this.projectId = this.route.snapshot.params['id'];
-    const proyectos = this.proyectosService.getProyectos();
-    this.project = proyectos.find(p => p.id === this.projectId);
+    // this.projectId = this.route.snapshot.params['id'];
+    // const proyectos = this.proyectosService.getProyectos();
+    // this.project = proyectos.find(p => p.id === this.projectId);
+    // this.proyectosService
+    //   .getProjectById(this.projectId)
+    //   .subscribe({ next: data => (this.project = data) });
   }
 }
 
