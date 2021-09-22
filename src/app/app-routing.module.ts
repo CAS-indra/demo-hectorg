@@ -20,6 +20,7 @@ const routes: Routes = [
     path: 'not-found',
     loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule),
   },
+  { path: 'projects/new', loadChildren: () => import('./project-creator/project-creator.module').then(m => m.ProjectCreatorModule) },
   {
     path: '**',
     redirectTo: 'not-found',

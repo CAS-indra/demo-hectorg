@@ -17,8 +17,7 @@
   <div *ngFor="let proyecto of proyectos">
   <!--<span [class]= proyecto.status></span>
     <span class="{{ proyecto.status}}">  -->
-      <span [ngClass]="{ active: proyecto.status ==1, pending: proyecto.status==0}">
-
+      <span [ngClass]="{ active: proyecto.status==1, pending: proyecto.status==0}">
         😂 <a routerLink="./project-editor/{{proyecto.id}}">{{ proyecto.name }}</a>
       </span>
     </div>

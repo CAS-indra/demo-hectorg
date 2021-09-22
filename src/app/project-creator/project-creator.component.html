@@ -1,0 +1,22 @@
+<form [formGroup]="formGroup"
+      (ngSubmit)="submitProject()">
+  <fieldset>
+    <div>
+      <label for="name">Nombre: </label>
+      <input type="text" name="name" id="name" formControlName="name">
+      <span *ngIf="formGroup.controls['name'].errors">* Ojo....</span>
+    </div>
+    <div>
+      <label for="budget">Presupuesto: </label>
+      <input type="number" name="budget" id="budget" formControlName="budget">
+    </div>
+    <div>
+      <label for="startDate">Fecha de Inicio: </label>
+      <input type="date" name="startDate" id="startDate" formControlName="startDate">
+    </div>
+  </fieldset>
+  <button>Reset</button>
+  <button type="submit" [disabled]="formGroup.invalid">Enviar</button>
+</form>
+<h2>{{message}}</h2>
+

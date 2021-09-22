@@ -12,7 +12,7 @@ export class HomeComponent {
   public color = 'blueviolet';
   public value = 50;
 
-  constructor(private projectService: ProyectosService) {
+  constructor(projectService: ProyectosService) {
     const proyectos$: Observable<{ data: any[] }> = projectService.getProyectos$();
     proyectos$.subscribe(
       res => (this.proyectos = res.data),
