@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: 'https://proton-angular-builders.herokuapp.com/v1/projects',
 };
 
 /*
