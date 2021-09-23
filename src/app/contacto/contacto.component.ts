@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.scss']
+  styleUrls: ['./contacto.component.scss'],
 })
-export class ContactoComponent implements OnInit {
+export class ContactoComponent {
+  public subscriptores = 0;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public addSubscriptor(): void {
+    this.subscriptores++;
   }
-
 }

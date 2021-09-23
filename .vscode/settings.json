@@ -18,4 +18,18 @@
     "[typescript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+
+    "workbench.colorCustomizations": {
+      "editorError.foreground": "#FF0000",
+      "editorInfo.foreground": "#00FFFF",
+      "editorWarning.foreground": "#FFCC00",
+      "editorBracketHighlight.foreground1": "#CC00FF",
+      "editorBracketHighlight.foreground2": "#00FFFF",
+      "editorBracketHighlight.foreground3": "#33FF00",
+      "editorBracketHighlight.foreground4": "#FFFF00",
+      "editorBracketHighlight.foreground5": "#FFCC00",
+      "editorBracketHighlight.foreground6": "#FF0000",
+      "tab.activeBorder": "#FFFF00",
+      "tab.activeBackground": "#193549"
+    }
 }

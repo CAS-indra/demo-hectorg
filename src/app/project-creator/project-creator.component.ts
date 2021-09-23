@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { GlobalService } from '../data/global.service';
 import { ProyectosService } from '../data/proyectos.service';
 
 @Component({
   selector: 'app-project-creator',
   templateUrl: './project-creator.component.html',
   styleUrls: ['./project-creator.component.scss'],
+  //changeDetection: ChangeDetectionStrategy.OnPush, // Al activar esto ciertas cosas dejan de pasar y el programador tiene que trabajar mas
 })
 export class ProjectCreatorComponent {
   public formGroup: FormGroup;
-  public message = '';
 
-  constructor(public fb: FormBuilder, private proyectosService: ProyectosService) {
+  constructor(
+    public fb: FormBuilder,
+    private proyectosService: ProyectosService,
+    private globalService: GlobalService,
+  ) {
     this.formGroup = fb.group({
       //forma antigua
       name: [
@@ -31,9 +36,13 @@ export class ProjectCreatorComponent {
   public submitProject(): void {
     console.log('Enviando....');
     console.log(this.formGroup.value);
-    //TODO: llamar al servicio y hacer el post
+
     this.proyectosService.postProyecto$(this.formGroup.value).subscribe({
-      error: err => (this.message = err.message),
+      error: err => {
+        console.log(err.message);
+        // this.globalService.message = err.message;
+        this.globalService.setMessage(err.message);
+      },
     });
   }
 }
